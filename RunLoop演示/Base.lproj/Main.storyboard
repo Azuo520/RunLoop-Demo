@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6am-NO-skJ">
+                                <rect key="frame" x="127" y="319" width="120" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.83514639270107116" blue="0.63861931009439632" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="1S6-GG-ijU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="9hM-Mv-TuA"/>
+                                    <constraint firstAttribute="width" constant="60" id="H41-yP-652"/>
+                                    <constraint firstAttribute="width" constant="72" id="KNb-Dr-NuY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="Yp2-9c-5YD"/>
+                                    <constraint firstAttribute="width" constant="100" id="d80-Fo-up1"/>
+                                </constraints>
+                                <state key="normal" title="添加source事件">
+                                    <color key="titleColor" red="1" green="0.59893845619999997" blue="0.099432959330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9hM-Mv-TuA"/>
+                                        <exclude reference="H41-yP-652"/>
+                                        <exclude reference="KNb-Dr-NuY"/>
+                                        <exclude reference="Yp2-9c-5YD"/>
+                                        <exclude reference="d80-Fo-up1"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="showSource:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1FQ-IY-kLe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahe-Ex-Dyu">
+                                <rect key="frame" x="138" y="364" width="100" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.83514639270000002" blue="0.63861931009999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aZ8-dd-aaD"/>
+                                    <constraint firstAttribute="width" constant="100" id="twv-ma-Fyh"/>
+                                </constraints>
+                                <state key="normal" title="添加timer">
+                                    <color key="titleColor" red="1" green="0.59893845619999997" blue="0.099432959330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fKZ-b7-rIT"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UfN-xP-Snx">
+                                <rect key="frame" x="54" y="87" width="248" height="150"/>
+                                <color key="backgroundColor" red="1" green="0.83514639270000002" blue="0.63861931009999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Y1a-5R-hsA"/>
+                                    <constraint firstAttribute="height" constant="150" id="unW-ls-Mvp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Y1a-5R-hsA"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6am-NO-skJ" firstAttribute="top" secondItem="UfN-xP-Snx" secondAttribute="bottom" constant="82" id="3fg-62-KF6"/>
+                            <constraint firstItem="ahe-Ex-Dyu" firstAttribute="top" secondItem="6am-NO-skJ" secondAttribute="bottom" constant="15" id="84V-aK-xDf"/>
+                            <constraint firstItem="ahe-Ex-Dyu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bXf-Ke-swd"/>
+                            <constraint firstItem="6am-NO-skJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hjI-1y-rzj"/>
+                            <constraint firstItem="UfN-xP-Snx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="67" id="ljr-7Z-z5L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UfN-xP-Snx" secondAttribute="trailing" constant="57" id="nIV-Jg-GYw"/>
+                            <constraint firstItem="UfN-xP-Snx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="38" id="ziV-eA-4PV"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="textView" destination="UfN-xP-Snx" id="eZQ-ee-pyC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287.5" y="226.5"/>
+        </scene>
+    </scenes>
+</document>
