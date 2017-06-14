@@ -1,11 +1,12 @@
-# RunLoop-Demo
- RunLoop的基本概念与运用
+# CustomMap-Demo
+ iOS开发_定制功能模块化Demo
 ###本次开发环境
 Xcode: 7.2  
 iOS Simulator: iphone6
 ### 内容
 
- RunLoop的基本概念与运用
+iOS开发_定制功能模块化
+不同项目功能定制、模块化项目。
 
 ###
 RunLoop的运用，mode模式与定时源的同步性。
