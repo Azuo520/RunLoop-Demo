@@ -10,11 +10,14 @@
 
 @interface ViewController ()
 
-//测试一
-@property (strong,nonatomic)NSThread *thread;
+/// 测试一
+@property (strong, nonatomic) NSThread *thread;
+
 - (IBAction)showSource:(id)sender;
-//测试二
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+
+// 测试二
+@property (nonatomic, weak) IBOutlet UITextView *textView;
+
 - (IBAction)addTime:(UIButton *)sender;
 
 @end
@@ -23,15 +26,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //创建自定义的子线程
-    self.thread = [[NSThread alloc]initWithTarget:self selector:@selector(threadMethod) object:nil];
-    [self.thread start];  //启动子线程
+    // 创建自定义的子线程
+    self.thread = [[NSThread alloc]initWithTarget:self
+                                         selector:@selector(threadMethod)
+                                           object:nil];
+    // 启动子线程
+    [self.thread start];
 }
--(void)threadMethod
-{
+
+- (void)threadMethod {
     NSLog(@"打开子线程方法");
+    
     while (1) {
-        
         //条件一：run，进入循环，如果没有source/timer就直接退出，不进入循环，后面加上source才能进入工作。
         /*【原因：如果线程中有需要处理的源，但是响应的事件没有到来的时候，线程就会休眠等待相应事件的发生;
          这就是为什么run loop可以做到让线程有工作的时候忙于工作，而没工作的时候处于休眠状态。】
@@ -57,8 +63,9 @@
     [self performSelector:@selector(threadSelector) onThread:self.thread withObject:nil waitUntilDone:NO];
 
 }
--(void)threadSelector//【在子线程】
-{
+
+///【在子线程】
+- (void)threadSelector {
     NSLog(@"打开子线程Selector源");
     NSLog(@"此处是threadSelector源：%@",[NSThread currentThread]);
 }
@@ -67,18 +74,21 @@
 #pragma mark -- 二、Time测试
 - (IBAction)addTime:(UIButton *)sender {
     NSTimer *timer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(showTimer) userInfo:nil repeats:YES];
-    //添加timer到RunLoop
-    [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSDefaultRunLoopMode];
+    // 添加 timer 到 RunLoop
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
--(void)showTimer   //【在主线程】
-{
+
+///【在主线程】
+- (void)showTimer    {
     NSLog(@"调用time的线程：%@",[NSThread currentThread]);
     [self showText:@"-------time-------"];
 }
-#pragma mark --在文本控件textView后面增加str字符串
--(void)showText:(NSString *)str  //注意：UI控件需要在主线程里面，如果是在子线程执行此段代码则运行报错。
-{
+
+/// 注意：UI控件需要在主线程里面，如果是在子线程执行此段代码则运行报错。
+/// @param str 在文本控件textView后面增加str字符串
+- (void)showText:(NSString *)str  {
     NSString *text = self.textView.text;
     self.textView.text = [text stringByAppendingString:str];
 }
+
 @end
